@@ -1,3 +1,6 @@
+% Yixuan Ding
+% ssyyd13@nottingham.edu.cn
+%% PRELIMINARY TASK - ARDUINO AND GIT INSTALLATION [10 MARKS]
 clear all; 
 clc;
 a = arduino;
