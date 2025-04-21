@@ -1,8 +1,7 @@
 % Yixuan Ding
 % ssyyd13@nottingham.edu.cn
 %% PRELIMINARY TASK - ARDUINO AND GIT INSTALLATION [10 MARKS]
-clear all; 
-clc;
+clc;clear all;
 a = arduino;
 for i=1:10                     %loop
  writeDigitalPin(a,'D7',1);    %light up led
