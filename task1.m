@@ -38,7 +38,7 @@ for j=0:10
     shuchu=sprintf('%sMinute\t\t\t%d\nTempreature \t%.2f C\n\n',shuchu,j,temp);
 end
 
-shuchu=sprintf('%sMax temp\t\t%.2f c\nMin temp\t\t%.2fC\nAverage temp\t%.2fC',shuchu,max_t,min_t,avg_t);
+shuchu=sprintf('%sMax temp\t\t%.2fC\nMin temp\t\t%.2fC\nAverage temp\t%.2fC',shuchu,max_t,min_t,avg_t);
 
 shuchu=sprintf('%s\n\nData logging terminated\n\n',shuchu);
 
