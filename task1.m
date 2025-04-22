@@ -40,8 +40,33 @@ end
 
 shuchu=sprintf('%sMax temp\t\t%.2f c\nMin temp\t\t%.2fC\nAverage temp\t%.2fC',shuchu,max_t,min_t,avg_t);
 
-shuchu=sprintf('%s\n\nData logging terminated\n',shuchu);
+shuchu=sprintf('%s\n\nData logging terminated\n\n',shuchu);
 
 fprintf('%s',shuchu);
 
 %e
+% write in
+txtfile = fopen('cabin_temperature.txt', 'w');
+
+% check
+if txtfile == -1
+    error('cannot open cabin_temperature.txt ');
+end
+
+% write data
+fprintf(txtfile, '%s', shuchu);
+
+% close file
+fclose(txtfile);
+
+%check
+txtfile=fopen('cabin_temperature.txt', 'r');
+if txtfile == -1
+    error('cannot open cabin_temperature.txt ');
+end
+
+content = fread(txtfile, '*char')';
+
+fclose(txtfile);
+disp('the content as follows');
+disp(content);
