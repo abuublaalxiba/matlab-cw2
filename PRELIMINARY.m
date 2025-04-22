@@ -9,3 +9,4 @@ for i=1:10                     %loop
     writeDigitalPin(a,'D7',0); %light off led
     pause(0.5);                %pause for 0.5 second
 end
+
