@@ -4,9 +4,9 @@
 clc;clear all;
 a = arduino;
 for i=1:10                     %loop
- writeDigitalPin(a,'D7',1);    %light up led
+ writeDigitalPin(a,'D8',1);    %light up led
     pause(0.5);                %pause for 0.5 second
-    writeDigitalPin(a,'D7',0); %light off led
+    writeDigitalPin(a,'D8',0); %light off led
     pause(0.5);                %pause for 0.5 second
 end
 

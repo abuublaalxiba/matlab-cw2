@@ -19,28 +19,28 @@ max_t = max(t);        %get max tempreture
 avg_t = mean(t);       %get average tempreture
 
 %c
-time=0:(n-1);
-plot(time,t);
-xlabel('Time (s)');
-ylabel('Tempreture(°C)')
-title('Temperature vs. Time');
+time=0:(n-1);            %time
+plot(time,t);            %plot point
+xlabel('Time (s)');      %x label
+ylabel('Tempreture(°C)') %y label
+title('Temperature vs. Time');  %title
 
 %d
 shuchu=sprintf('Data logging initiated-23/4/2025,\nLocation ，Nottingham\n\n');%print title
 
-for j=0:10
-    k=j*60;
-    if(k==0)
+for j=0:10            %loop
+    k=j*60;    
+    if(k==0)          %the 0 second
         temp=t(k+1);
     else
-    temp=t(k);
+    temp=t(k);        
     end
-    shuchu=sprintf('%sMinute\t\t\t%d\nTempreature \t%.2f C\n\n',shuchu,j,temp);
+    shuchu=sprintf('%sMinute\t\t\t%d\nTempreature \t%.2f C\n\n',shuchu,j,temp);  %print body
 end
 
 shuchu=sprintf('%sMax temp\t\t%.2fC\nMin temp\t\t%.2fC\nAverage temp\t%.2fC',shuchu,max_t,min_t,avg_t);
 
-shuchu=sprintf('%s\n\nData logging terminated\n\n',shuchu);
+shuchu=sprintf('%s\n\nData logging terminated\n\n',shuchu);   % tail
 
 fprintf('%s',shuchu);
 
@@ -69,4 +69,4 @@ content = fread(txtfile, '*char')';
 
 fclose(txtfile);
 disp('the content as follows');
-disp(content);
+disp(content);     % the txt file content
