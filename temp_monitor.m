@@ -14,30 +14,35 @@ ylabel('Temperature (°C)'); %  y label
 xtime= [];   % restore time
 ytemp= [];   % restore temp
 start_time = tic; % recorde start time
-
+c=0;          %pause time
+lasttime=0;   %last time draw picture
+realtime=0;   %the current time
 while true
     v=readVoltage(a,'A0');  %read data
     t=(v-V0)/TC;              %transfer voltage to temp
     elapsed_time = toc(start_time);
-    
-    xtime = [xtime, elapsed_time];
-    ytemp = [ytemp, t];
+    realtime=elapsed_time+c;
+    if realtime-lasttime>=1
+    xtime = [xtime, realtime];    ytemp = [ytemp, t];
     plot(xtime,ytemp);
-    xlim([max(0,elapsed_time-10),elapsed_time+1]);
-    ylim([0,50])
+    xlim([max(0,realtime-10),realtime+1]);
+    ylim([0,50]);
     drawnow;
-    if t>=18&&t<=24          %tempreture in 18-24
+    lasttime=realtime;
+    end
+    if t>=8&&t<=44          %tempreture in 18-24
         writeDigitalPin(a,green,1); %green on
         writeDigitalPin(a,red,0);   % red off
         writeDigitalPin(a,yellow,0);%yellow off
-    else  if t<18
+    else  if t<8
             writeDigitalPin(a,green,0);%green off
             writeDigitalPin(a,red,0);% red off
              writeDigitalPin(a,yellow,1);%yellow on
              pause(0.5);    %term
              writeDigitalPin(a,yellow,0);
              pause(0.5);
-    else if t>24
+             c=c+1;
+    else if t>44
             writeDigitalPin(a,green,0);%green off
             writeDigitalPin(a,red,1);% red on
             writeDigitalPin(a,yellow,0);%yellow off
@@ -45,6 +50,7 @@ while true
              pause(0.25);      %term
              writeDigitalPin(a,red,0);
              pause(0.25);
+             c=c+0.5;
     end
     end
     end
