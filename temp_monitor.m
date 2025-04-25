@@ -30,11 +30,11 @@ while true
     drawnow;
     lasttime=realtime;
     end
-    if t>=8&&t<=44          %tempreture in 18-24
+    if t>=18&&t<=24          %tempreture in 18-24
         writeDigitalPin(a,green,1); %green on
         writeDigitalPin(a,red,0);   % red off
         writeDigitalPin(a,yellow,0);%yellow off
-    else  if t<8
+    else  if t<18
             writeDigitalPin(a,green,0);%green off
             writeDigitalPin(a,red,0);% red off
              writeDigitalPin(a,yellow,1);%yellow on
@@ -42,11 +42,10 @@ while true
              writeDigitalPin(a,yellow,0);
              pause(0.5);
              c=c+1;
-    else if t>44
+    else if t>24
             writeDigitalPin(a,green,0);%green off
             writeDigitalPin(a,red,1);% red on
             writeDigitalPin(a,yellow,0);%yellow off
-            writeDigitalPin(a,red,1);
              pause(0.25);      %term
              writeDigitalPin(a,red,0);
              pause(0.25);
