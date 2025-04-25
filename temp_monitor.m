@@ -2,6 +2,9 @@ function temp_monitor(a)
 % Yixuan Ding
 % ssyyd13@nottingham.edu.cn
 %% temp_monitor.
+%%doc temp_monitor: this function is designed that a Real-time temperature monitoring program
+% displays a temperature-time chart on startup. Red light flashes every 0.25s above 24°C, 
+% green stays lit between 18-24°C, and yellow flashes every 0.5s below 18°C.
 red='D10';
 green='D9';
 yellow='D8';

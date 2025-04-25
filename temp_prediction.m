@@ -1,6 +1,8 @@
 function temp_prediction(a)
 % Yixuan Ding
 % ssyyd13@nottingham.edu.cn
+%%doc temp_prediction:Real-time temperature rate monitor: Red light at +4°C/min rise, yellow at -4°C/min drop, green otherwise. 
+% Forecasts 5-minute temperature and displays current temp, rate, and prediction on-screen.
 %% temp_prediction
 red='D10';
 green='D9';
