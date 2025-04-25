@@ -19,7 +19,7 @@ clc;clear all;
 a = arduino; %initialize
 V0 = 0.5;    % 0°C voltage V
 TC = 0.01;   % coefficients mv/c
-duration=60;      %Create a variable “duration” with value 60
+duration=600;      %Create a variable “duration” with value 60
 interval_time=1; n=duration/interval_time; %set interval time
 v=zeros(1,n);t=zeros(1,n);% Create the arrays that will contain the acquired data. 
 for i=1:n
@@ -42,7 +42,7 @@ title('Temperature vs. Time');  %title
 shuchu=sprintf('Data logging initiated-23/4/2025,\nLocation ，Nottingham\n\n');%print title
 
 for j=0:10            %loop
-    k=j*6;    
+    k=j*60;    
     if(k==0)          %the 0 second
         temp=t(k+1);
     else
