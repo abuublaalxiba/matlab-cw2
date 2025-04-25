@@ -99,4 +99,9 @@ temp_prediction(a);
 
 %% TASK 4 - REFLECTIVE STATEMENT [5 MARKS]
 
-% Insert answers here
+% I encountered numerous challenges during this process. For instance,
+% it was my first time using GitHub and assembling an Arduino. While coding, 
+% I faced difficulties such as maintaining timing consistency in Task 2. 
+% However, my strengths lie in coding familiarity and having developed strong programming logic through continuous learning. My limitation is relatively lower coding efficiency.
+% Moving forward, I aim to master MATLAB workflows more proficiently, 
+% while also committing to self-directed learning to deepen my MATLAB knowledge base.
